@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=WineYards
+Comment=Like Bottles, but for KDE
+Exec=/usr/bin/wineyards
+GenericName=Wine Frontend
+Icon=wine
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Utility

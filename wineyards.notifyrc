@@ -1,0 +1,34 @@
+[Global]
+IconName=wine
+Name=WineYards
+Comment=Tridentu-RK's official Wine frontend.
+DesktopEntry=wineyards.desktop
+
+[Context/packaging]
+Name=Packaging
+Comment=Used for installing and downloading Caravel Wine packages.
+
+[Event/packageDownloaded]
+Name=Wine Package Downloaded
+Comment=A Wine Package was downloaded.
+Contexts=packaging
+Action=Popup
+Urgency=Low
+
+[Event/packageInstalled]
+Name=Wine Package Installed
+Comment=A Wine Package was installed.
+Contexts=packaging
+Action=Sound|Popup
+Urgency=Normal
+
+
+[Context/management]
+Name=WineYard Management
+Comment=Used for management-related events (such as desktop files).
+
+[Event/desktopFileCreated]
+Name=New Desktop Entry Created
+Comment=A desktop file has been created for a program.
+Action=Sound|Popup
+Urgency=Low

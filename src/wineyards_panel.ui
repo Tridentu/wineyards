@@ -1,0 +1,1996 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Tridentu Group</author>
+ <class>WineyardPreferencesPanel</class>
+ <widget class="QWidget" name="WineyardPreferencesPanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>865</width>
+    <height>648</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Wineyard Preferences</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="settings">
+    <normaloff>.</normaloff>.</iconset>
+  </property>
+  <widget class="QTabWidget" name="settingsTabs">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>20</y>
+     <width>860</width>
+     <height>600</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>860</width>
+     <height>600</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>860</width>
+     <height>600</height>
+    </size>
+   </property>
+   <property name="tabPosition">
+    <enum>QTabWidget::South</enum>
+   </property>
+   <property name="tabShape">
+    <enum>QTabWidget::Rounded</enum>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <property name="usesScrollButtons">
+    <bool>true</bool>
+   </property>
+   <property name="documentMode">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="tabPreferences">
+    <attribute name="icon">
+     <iconset theme="settings">
+      <normaloff>.</normaloff>.</iconset>
+    </attribute>
+    <attribute name="title">
+     <string>Preferences</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QScrollArea" name="scrollArea">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>820</width>
+         <height>540</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="lineWidth">
+        <number>1</number>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOn</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QAbstractScrollArea::AdjustToContents</enum>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>-1067</y>
+          <width>824</width>
+          <height>1764</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="prefLayout">
+         <property name="spacing">
+          <number>3</number>
+         </property>
+         <property name="sizeConstraint">
+          <enum>QLayout::SetFixedSize</enum>
+         </property>
+         <property name="leftMargin">
+          <number>6</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QWidget" name="graphicsWidget" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>812</width>
+             <height>240</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>840</width>
+             <height>240</height>
+            </size>
+           </property>
+           <widget class="QLabel" name="graphicsTitle">
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>10</y>
+              <width>291</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>20</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">#graphicsTitle {
+	background-color: #ECEFF4;
+	color: #2E3440;
+	border-radius: 4px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Graphics</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::NoTextInteraction</set>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="dxvkCheckBox">
+            <property name="geometry">
+             <rect>
+              <x>70</x>
+              <y>60</y>
+              <width>181</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Use DXVK?</string>
+            </property>
+            <property name="icon">
+             <iconset theme="graphics">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="gamemodeCheckBox">
+            <property name="geometry">
+             <rect>
+              <x>570</x>
+              <y>60</y>
+              <width>191</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Use Gamemode?</string>
+            </property>
+            <property name="icon">
+             <iconset theme="preferences-desktop-gaming">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="acoShaderCheckbox">
+            <property name="geometry">
+             <rect>
+              <x>70</x>
+              <y>100</y>
+              <width>321</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Enable ACO shader compiler?</string>
+            </property>
+            <property name="icon">
+             <iconset theme="graphics">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="virtualDesktopCheckbox">
+            <property name="geometry">
+             <rect>
+              <x>70</x>
+              <y>140</y>
+              <width>321</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Use virtual desktop?</string>
+            </property>
+            <property name="icon">
+             <iconset theme="desktop">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="dGPUCheckBox">
+            <property name="geometry">
+             <rect>
+              <x>570</x>
+              <y>100</y>
+              <width>201</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Discrete GPU?</string>
+            </property>
+            <property name="icon">
+             <iconset theme="graphics">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="KComboBox" name="dGPUResolution">
+            <property name="geometry">
+             <rect>
+              <x>570</x>
+              <y>140</y>
+              <width>201</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="currentText">
+             <string/>
+            </property>
+            <property name="placeholderText">
+             <string>Resolution</string>
+            </property>
+            <property name="autoCompletion">
+             <bool>false</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>640x480</string>
+             </property>
+             <property name="icon">
+              <iconset theme="desktop">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>800x600</string>
+             </property>
+             <property name="icon">
+              <iconset theme="desktop">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1024x768</string>
+             </property>
+             <property name="icon">
+              <iconset theme="desktop">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1280x720</string>
+             </property>
+             <property name="icon">
+              <iconset theme="desktop">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1280x800</string>
+             </property>
+             <property name="icon">
+              <iconset theme="desktop">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1280x1024</string>
+             </property>
+             <property name="icon">
+              <iconset theme="desktop">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1440x900</string>
+             </property>
+             <property name="icon">
+              <iconset theme="desktop">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1600x900</string>
+             </property>
+             <property name="icon">
+              <iconset theme="desktop">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1680x1050</string>
+             </property>
+             <property name="icon">
+              <iconset theme="desktop">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1920x1200</string>
+             </property>
+             <property name="icon">
+              <iconset theme="desktop">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1920x1080</string>
+             </property>
+             <property name="icon">
+              <iconset theme="desktop">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2560x1440</string>
+             </property>
+             <property name="icon">
+              <iconset theme="desktop">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2560x1600</string>
+             </property>
+             <property name="icon">
+              <iconset theme="desktop">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3840x2160</string>
+             </property>
+             <property name="icon">
+              <iconset theme="desktop">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4096x2400</string>
+             </property>
+             <property name="icon">
+              <iconset theme="desktop">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="KSeparator" name="line1"/>
+         </item>
+         <item>
+          <widget class="QWidget" name="systemWidget" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>800</width>
+             <height>1100</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>840</width>
+             <height>1100</height>
+            </size>
+           </property>
+           <widget class="QLabel" name="systemTitle_prefs">
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>10</y>
+              <width>291</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>20</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">#systemTitle_prefs {
+	background-color: #ECEFF4;
+	color: #2E3440;
+	border-radius: 4px;
+}</string>
+            </property>
+            <property name="text">
+             <string>System</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::NoTextInteraction</set>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="syncTypeCB">
+            <property name="geometry">
+             <rect>
+              <x>520</x>
+              <y>70</y>
+              <width>241</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <item>
+             <property name="text">
+              <string>System</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ESync</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>FSync</string>
+             </property>
+            </item>
+           </widget>
+           <widget class="QCheckBox" name="syncCheckBox">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>70</y>
+              <width>291</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Enable Synchronization?</string>
+            </property>
+            <property name="icon">
+             <iconset theme="realtimesync">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="runnerLabel">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>120</y>
+              <width>311</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Runner Name (With Version):</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="KHistoryComboBox" name="runnerCB">
+            <property name="geometry">
+             <rect>
+              <x>520</x>
+              <y>120</y>
+              <width>241</width>
+              <height>31</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="dxvkVersionLabel">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>160</y>
+              <width>311</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>DXVK Version:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="vk3d3VersionLabel">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>200</y>
+              <width>311</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>VKD3D Version:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::NoTextInteraction</set>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="dxvkManage">
+            <property name="geometry">
+             <rect>
+              <x>680</x>
+              <y>160</y>
+              <width>81</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Manage</string>
+            </property>
+            <property name="icon">
+             <iconset theme="settings">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+           <widget class="KHistoryComboBox" name="dxvkVersionCB">
+            <property name="geometry">
+             <rect>
+              <x>520</x>
+              <y>160</y>
+              <width>151</width>
+              <height>31</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="vkd3dManage">
+            <property name="geometry">
+             <rect>
+              <x>680</x>
+              <y>200</y>
+              <width>81</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Manage</string>
+            </property>
+            <property name="icon">
+             <iconset theme="settings">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+           <widget class="KHistoryComboBox" name="vkd3dVersionCB">
+            <property name="geometry">
+             <rect>
+              <x>520</x>
+              <y>200</y>
+              <width>151</width>
+              <height>31</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="dxvkNVAPIManage">
+            <property name="geometry">
+             <rect>
+              <x>680</x>
+              <y>240</y>
+              <width>81</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Manage</string>
+            </property>
+            <property name="icon">
+             <iconset theme="settings">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+           <widget class="KHistoryComboBox" name="dxvkNVAPIVersionCB">
+            <property name="geometry">
+             <rect>
+              <x>520</x>
+              <y>240</y>
+              <width>151</width>
+              <height>31</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="dxvkNVAPIVersionLabel">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>240</y>
+              <width>311</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>DXVK NVAPI Version:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="latencyFlexVersionLabel">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>280</y>
+              <width>311</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>LatencyFleX Version:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::NoTextInteraction</set>
+            </property>
+           </widget>
+           <widget class="KHistoryComboBox" name="latencyFlexVersionCB">
+            <property name="geometry">
+             <rect>
+              <x>520</x>
+              <y>280</y>
+              <width>151</width>
+              <height>31</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="latencyFlexManage">
+            <property name="geometry">
+             <rect>
+              <x>680</x>
+              <y>280</y>
+              <width>81</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Manage</string>
+            </property>
+            <property name="icon">
+             <iconset theme="settings">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+           <widget class="QLabel" name="windowsVersionLabel">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>320</y>
+              <width>311</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Windows Version:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::NoTextInteraction</set>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="windowsManage">
+            <property name="geometry">
+             <rect>
+              <x>680</x>
+              <y>320</y>
+              <width>81</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Manage</string>
+            </property>
+            <property name="icon">
+             <iconset theme="settings">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+           <widget class="KHistoryComboBox" name="windowsVersionCB">
+            <property name="geometry">
+             <rect>
+              <x>520</x>
+              <y>320</y>
+              <width>151</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <item>
+             <property name="text">
+              <string>Windows 10</string>
+             </property>
+             <property name="icon">
+              <iconset theme="distributor-logo-windows">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Windows 8.1</string>
+             </property>
+             <property name="icon">
+              <iconset theme="distributor-logo-windows">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Windows 7</string>
+             </property>
+             <property name="icon">
+              <iconset theme="distributor-logo-windows">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Windows 2008</string>
+             </property>
+             <property name="icon">
+              <iconset theme="distributor-logo-windows">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Windows 2008 R2</string>
+             </property>
+             <property name="icon">
+              <iconset theme="distributor-logo-windows">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Windows XP</string>
+             </property>
+             <property name="icon">
+              <iconset theme="distributor-logo-windows">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+           </widget>
+           <widget class="QLabel" name="runtimeLabel">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>360</y>
+              <width>311</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Runtime:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::NoTextInteraction</set>
+            </property>
+           </widget>
+           <widget class="KHistoryComboBox" name="runtimeCB">
+            <property name="geometry">
+             <rect>
+              <x>520</x>
+              <y>360</y>
+              <width>151</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <item>
+             <property name="text">
+              <string>Wineyards</string>
+             </property>
+             <property name="icon">
+              <iconset theme="wine">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Steam</string>
+             </property>
+             <property name="icon">
+              <iconset theme="steam">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </item>
+           </widget>
+           <widget class="QToolButton" name="runtimeManage">
+            <property name="geometry">
+             <rect>
+              <x>680</x>
+              <y>360</y>
+              <width>81</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Manage</string>
+            </property>
+            <property name="icon">
+             <iconset theme="settings">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="gamescopeCheckbox">
+            <property name="geometry">
+             <rect>
+              <x>230</x>
+              <y>410</y>
+              <width>231</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Enable Gamescope?</string>
+            </property>
+            <property name="icon">
+             <iconset theme="preferences-desktop-gaming">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="gamescopeManage">
+            <property name="geometry">
+             <rect>
+              <x>460</x>
+              <y>410</y>
+              <width>91</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Manage</string>
+            </property>
+            <property name="icon">
+             <iconset theme="settings">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+           <widget class="QLabel" name="workingDirectoryLabel">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>470</y>
+              <width>311</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Working directory:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::NoTextInteraction</set>
+            </property>
+           </widget>
+           <widget class="KUrlRequester" name="kurlrequester">
+            <property name="geometry">
+             <rect>
+              <x>510</x>
+              <y>470</y>
+              <width>251</width>
+              <height>32</height>
+             </rect>
+            </property>
+            <property name="mode">
+             <set>KFile::Directory|KFile::ExistingOnly|KFile::LocalOnly</set>
+            </property>
+            <property name="placeholderText">
+             <string>Select a directory...</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="KEditListWidget" name="dllOverridesList">
+            <property name="geometry">
+             <rect>
+              <x>410</x>
+              <y>530</y>
+              <width>357</width>
+              <height>229</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="dllOverrideLabel">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>530</y>
+              <width>311</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>DLL Overrides:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::NoTextInteraction</set>
+            </property>
+           </widget>
+           <widget class="KEditListWidget" name="envVarsList">
+            <property name="geometry">
+             <rect>
+              <x>410</x>
+              <y>770</y>
+              <width>357</width>
+              <height>229</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="envVarsLabel">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>770</y>
+              <width>311</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Environment Variables:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::NoTextInteraction</set>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="drivesManage">
+            <property name="geometry">
+             <rect>
+              <x>240</x>
+              <y>1020</y>
+              <width>321</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Manage Drives</string>
+            </property>
+            <property name="icon">
+             <iconset theme="disk-manager">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="KSeparator" name="line2"/>
+         </item>
+         <item>
+          <widget class="QWidget" name="audioWidget" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>800</width>
+             <height>150</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>840</width>
+             <height>150</height>
+            </size>
+           </property>
+           <widget class="QLabel" name="audioTitle">
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>10</y>
+              <width>291</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>20</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">#audioTitle {
+	background-color: #ECEFF4;
+	color: #2E3440;
+	border-radius: 4px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Audio</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::NoTextInteraction</set>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="paCheckbox">
+            <property name="geometry">
+             <rect>
+              <x>230</x>
+              <y>70</y>
+              <width>341</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Reduce PulseAudio Latency?</string>
+            </property>
+            <property name="icon">
+             <iconset theme="epulse">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="KSeparator" name="line3"/>
+         </item>
+         <item>
+          <widget class="QWidget" name="developerWidget" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>800</width>
+             <height>250</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>840</width>
+             <height>250</height>
+            </size>
+           </property>
+           <widget class="QLabel" name="developersTitle">
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>10</y>
+              <width>291</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>20</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">#developersTitle {
+	background-color: #ECEFF4;
+	color: #2E3440;
+	border-radius: 4px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Developers &amp; Debug</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::NoTextInteraction</set>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="dxvkHUDCheckbox">
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>80</y>
+              <width>301</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Enable DXVK HUD</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="magnoCheckbox">
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>120</y>
+              <width>301</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Enable MangoHUD</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="wineFixmeLogsCheckbox">
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>160</y>
+              <width>301</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Enable Wine FIXME Logs</string>
+            </property>
+            <property name="icon">
+             <iconset theme="wine">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="tabCaravel">
+    <attribute name="icon">
+     <iconset theme="application-x-ar">
+      <normaloff>.</normaloff>.</iconset>
+    </attribute>
+    <attribute name="title">
+     <string>Caravel</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item alignment="Qt::AlignLeft">
+      <widget class="QWidget" name="searchBar" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>850</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>850</width>
+         <height>50</height>
+        </size>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="KLineEdit" name="searchText">
+          <property name="placeholderText">
+           <string>Search Caravel Wine packages...</string>
+          </property>
+          <property name="showClearButton" stdset="0">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCommandLinkButton" name="searchButton">
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Search</string>
+          </property>
+          <property name="icon">
+           <iconset theme="search">
+            <normaloff>.</normaloff>.</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListView" name="packageView"/>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="QWidget" name="toolbar" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>850</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>850</width>
+         <height>40</height>
+        </size>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QToolButton" name="installButton">
+          <property name="text">
+           <string>Install Selected</string>
+          </property>
+          <property name="icon">
+           <iconset theme="install">
+            <normaloff>.</normaloff>.</iconset>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextBesideIcon</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="selectButton">
+          <property name="text">
+           <string>Select Dependencies</string>
+          </property>
+          <property name="icon">
+           <iconset theme="select">
+            <normaloff>.</normaloff>.</iconset>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextBesideIcon</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="docButton">
+          <property name="text">
+           <string>Documentation</string>
+          </property>
+          <property name="icon">
+           <iconset theme="help">
+            <normaloff>.</normaloff>.</iconset>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextBesideIcon</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="tabPrograms">
+    <attribute name="icon">
+     <iconset theme="applications-all">
+      <normaloff>.</normaloff>.</iconset>
+    </attribute>
+    <attribute name="title">
+     <string>Programs</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="KTitleWidget" name="programsTitle">
+       <property name="minimumSize">
+        <size>
+         <width>812</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>812</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Programs</string>
+       </property>
+       <property name="comment">
+        <string>These are the programs found in your wineyard's Start Menu.</string>
+       </property>
+       <property name="icon">
+        <iconset theme="distributor-logo-windows">
+         <normaloff>.</normaloff>.</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="programList">
+       <property name="minimumSize">
+        <size>
+         <width>850</width>
+         <height>400</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>840</width>
+         <height>500</height>
+        </size>
+       </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="actionsBar" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>812</width>
+         <height>40</height>
+        </size>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item alignment="Qt::AlignLeft">
+         <widget class="QWidget" name="appActionsBar" native="true">
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QToolButton" name="launchOptionsButton">
+             <property name="minimumSize">
+              <size>
+               <width>90</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Launch Options</string>
+             </property>
+             <property name="icon">
+              <iconset theme="launch">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+             <property name="toolButtonStyle">
+              <enum>Qt::ToolButtonTextBesideIcon</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="wineHQButton">
+             <property name="minimumSize">
+              <size>
+               <width>90</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>WineHQ</string>
+             </property>
+             <property name="icon">
+              <iconset theme="wine">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+             <property name="toolButtonStyle">
+              <enum>Qt::ToolButtonTextBesideIcon</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="protonDBButton">
+             <property name="minimumSize">
+              <size>
+               <width>90</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>ProtonDB</string>
+             </property>
+             <property name="icon">
+              <iconset theme="portproton">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+             <property name="toolButtonStyle">
+              <enum>Qt::ToolButtonTextBesideIcon</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="uninstallButton">
+             <property name="minimumSize">
+              <size>
+               <width>90</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Uninstall</string>
+             </property>
+             <property name="icon">
+              <iconset theme="uninstall">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+             <property name="toolButtonStyle">
+              <enum>Qt::ToolButtonTextBesideIcon</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignLeft">
+         <widget class="QWidget" name="actionsSubBar" native="true">
+          <property name="maximumSize">
+           <size>
+            <width>820</width>
+            <height>60</height>
+           </size>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QToolButton" name="searchButton2">
+             <property name="minimumSize">
+              <size>
+               <width>175</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>175</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Search for Programs...</string>
+             </property>
+             <property name="icon">
+              <iconset theme="search">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+             <property name="toolButtonStyle">
+              <enum>Qt::ToolButtonTextBesideIcon</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="helpButton2">
+             <property name="minimumSize">
+              <size>
+               <width>90</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>90</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Help</string>
+             </property>
+             <property name="icon">
+              <iconset theme="help">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+             <property name="toolButtonStyle">
+              <enum>Qt::ToolButtonTextBesideIcon</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="addPathButton">
+             <property name="minimumSize">
+              <size>
+               <width>90</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>90</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Add Path</string>
+             </property>
+             <property name="icon">
+              <iconset theme="add">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+             <property name="toolButtonStyle">
+              <enum>Qt::ToolButtonTextBesideIcon</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="tabVersioning">
+    <attribute name="icon">
+     <iconset theme="on">
+      <normaloff>.</normaloff>.</iconset>
+    </attribute>
+    <attribute name="title">
+     <string>Versioning</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <item>
+      <widget class="KTitleWidget" name="versioningTitle">
+       <property name="text">
+        <string>Versioning</string>
+       </property>
+       <property name="icon">
+        <iconset theme="wine">
+         <normaloff>.</normaloff>.</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="versionList"/>
+     </item>
+     <item alignment="Qt::AlignLeft">
+      <widget class="QWidget" name="toolbar2Widget" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>840</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>840</width>
+         <height>50</height>
+        </size>
+       </property>
+       <layout class="QHBoxLayout" name="toolbar2">
+        <item>
+         <widget class="QToolButton" name="addVersionButton">
+          <property name="text">
+           <string>Add New Version</string>
+          </property>
+          <property name="icon">
+           <iconset theme="add">
+            <normaloff>.</normaloff>.</iconset>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextBesideIcon</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="currentVersionButton">
+          <property name="text">
+           <string>Check Current Version</string>
+          </property>
+          <property name="icon">
+           <iconset theme="time">
+            <normaloff>.</normaloff>.</iconset>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextBesideIcon</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="tabInstallers">
+    <attribute name="icon">
+     <iconset theme="install">
+      <normaloff>.</normaloff>.</iconset>
+    </attribute>
+    <attribute name="title">
+     <string>Installers</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <widget class="QWidget" name="searchBar2" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>850</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>850</width>
+         <height>50</height>
+        </size>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="KLineEdit" name="searchText2">
+          <property name="placeholderText">
+           <string>Search Caravel Wine installers...</string>
+          </property>
+          <property name="showClearButton" stdset="0">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCommandLinkButton" name="installSearchButton">
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Search</string>
+          </property>
+          <property name="icon">
+           <iconset theme="search">
+            <normaloff>.</normaloff>.</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="listWidget">
+       <property name="minimumSize">
+        <size>
+         <width>840</width>
+         <height>480</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>840</width>
+         <height>480</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KHistoryComboBox</class>
+   <extends>KComboBox</extends>
+   <header>khistorycombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KUrlRequester</class>
+   <extends>QWidget</extends>
+   <header>kurlrequester.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KEditListWidget</class>
+   <extends>QWidget</extends>
+   <header>keditlistwidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KSeparator</class>
+   <extends>QFrame</extends>
+   <header>kseparator.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KTitleWidget</class>
+   <extends>QWidget</extends>
+   <header>ktitlewidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,16 @@
+<!DOCTYPE gui SYSTEM "kpartgui.dtd">
+<gui name="JaqubSuite"
+     version="3">
+    <MenuBar>
+        <Menu name="file">
+            <action name="new"/>
+            <action name="open"/>
+            <action name="openRecent"/>
+        </Menu>
+        <Menu>
+            <text>WineYard</text>
+            <action name="wineyardRename"/>
+        </Menu>
+    </MenuBar>
+</gui>
+

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WineyardsWindow</class>
+ <widget class="QMainWindow" name="WineyardsWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>850</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1280</width>
+    <height>850</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1280</width>
+    <height>850</height>
+   </size>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>WineYards</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="wine">
+    <normaloff>.</normaloff>.</iconset>
+  </property>
+  <property name="documentMode">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="KTitleWidget" name="title">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>1241</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Wineyards</string>
+    </property>
+    <property name="icon">
+     <iconset theme="wine">
+      <normaloff>.</normaloff>.</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="autoHideTimeout">
+     <number>10</number>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="wineyardsView">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>1261</width>
+      <height>771</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="documentMode">
+     <bool>true</bool>
+    </property>
+    <property name="movable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="workspace">
+     <attribute name="icon">
+      <iconset theme="wine">
+       <normaloff>.</normaloff>.</iconset>
+     </attribute>
+     <attribute name="title">
+      <string>WineYard Workspace</string>
+     </attribute>
+     <attribute name="toolTip">
+      <string>Used for managing WineYards graphically.</string>
+     </attribute>
+     <attribute name="whatsThis">
+      <string>Used for managing WineYards graphically.</string>
+     </attribute>
+     <widget class="QListWidget" name="overviewWidget">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>1211</width>
+        <height>691</height>
+       </rect>
+      </property>
+      <property name="defaultDropAction">
+       <enum>Qt::IgnoreAction</enum>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>64</width>
+        <height>64</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="consoleTab">
+     <attribute name="icon">
+      <iconset theme="terminal">
+       <normaloff>.</normaloff>.</iconset>
+     </attribute>
+     <attribute name="title">
+      <string>WineYard Console</string>
+     </attribute>
+     <attribute name="toolTip">
+      <string>Used to manage WineYards directly.</string>
+     </attribute>
+     <attribute name="whatsThis">
+      <string>Used to manage WineYards directly.</string>
+     </attribute>
+     <widget class="KLineEdit" name="commandText">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>540</y>
+        <width>981</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="maxLength">
+       <number>1024</number>
+      </property>
+      <property name="squeezedTextEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="clickMessage">
+       <string>Enter your command here.</string>
+      </property>
+      <property name="showClearButton" stdset="0">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QCommandLinkButton" name="runButton">
+      <property name="geometry">
+       <rect>
+        <x>1020</x>
+        <y>540</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Run Command</string>
+      </property>
+      <property name="shortcut">
+       <string>Ctrl+Shift+Return</string>
+      </property>
+      <property name="description">
+       <string>Execute this command </string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="listWidget">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>1171</width>
+        <height>501</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="tabKeyNavigation">
+       <bool>true</bool>
+      </property>
+      <property name="showDropIndicator" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::NoSelection</enum>
+      </property>
+      <property name="itemAlignment">
+       <set>Qt::AlignLeading</set>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KTitleWidget</class>
+   <extends>QWidget</extends>
+   <header>ktitlewidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

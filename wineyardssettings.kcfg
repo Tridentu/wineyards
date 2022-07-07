@@ -1,0 +1,49 @@
+
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+                    http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+        <group name="General" >
+            <entry name="showUpdateDate"  type="Bool">
+                <label>Show update date (Whether to show the update date in the bottle list)</label>
+                <default>false</default>
+            </entry>
+            <entry name="showNotifications" type="Bool">
+                <label>Show notifications for downloads and installs</label>
+                <default>false</default>
+            </entry>
+            <entry name="cleanTempFiles"  type="Bool">
+                <label>Clean temp files when WineYards launches?</label>
+                <default>false</default>
+            </entry>
+            <entry name="closeWineyards"  type="Bool">
+                <label>Close WineYards after starting a program</label>
+                <default>false</default>
+            </entry>
+        </group>
+        <group name="Advanced">
+            <entry name="customWineyardsPath"  type="Url">
+                <label>Custom wineyards path (requires a restart)</label>
+            </entry>
+        </group>
+        <group name="Runners">
+            <entry name="runnersList"  type="StringList">
+                <label>The list of runners to use.</label>
+                <default>Caffe,Lutris,Proton</default>
+            </entry>
+             <entry name="preReleaseEnabled"  type="Bool">
+                <label>Whether the above list should display unstable versions.</label>
+                <default>false</default>
+            </entry>
+        </group>
+         <group name="DLLComponents">
+            <entry name="listDXVK"  type="StringList">
+            </entry>
+            <entry name="listVKD3D"  type="StringList">
+            </entry>
+            <entry name="listDXVKNVAPI"  type="StringList">
+            </entry>
+             <entry name="listLatencyFlex"  type="StringList">
+            </entry>
+        </group>
+</kcfg>
