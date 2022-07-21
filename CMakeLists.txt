@@ -5,7 +5,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(GENERATE_MOC ON)
-find_package(ECM 1.0.0 REQUIRED NO_MODULE)
+find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 # Find the QtWidgets library
@@ -32,7 +32,7 @@ find_package(KF5 "5.86.0" REQUIRED COMPONENTS
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
-
+include(ECMQtDeclareLoggingCategory)
 
 
 set(wineyards_SRC
@@ -75,6 +75,42 @@ target_link_libraries(wineyards
     INIReader
 )
 
+set(wineyards_kio_SRC
+    winekio/kio_wineyards.cpp
+)
+
+add_library(kio_wineyards MODULE)
+
+
+
+set_target_properties(kio_wineyards PROPERTIES
+    OUTPUT_NAME "wineyards"
+)
+
+target_sources(kio_wineyards PRIVATE ${wineyards_kio_SRC})
+
+target_link_libraries(kio_wineyards
+   KF5::KIOCore KF5::I18n   KF5::KIOFileWidgets
+)
+
+ecm_qt_declare_logging_category(kio_wineyards
+    HEADER kio_wineyards_debug.h
+    IDENTIFIER LOG_KIO_WINEYARDS
+    CATEGORY_NAME kf.kio.slaves.wineyards
+    OLD_CATEGORY_NAMES kio_wineyards
+    DESCRIPTION "KIO wineyards"
+    EXPORT KIO_WINEYARDS
+)
+
+
+ecm_qt_install_logging_categories(
+    EXPORT KIO_WINEYARDS
+    FILE kio-wineyards.categories
+    DESTINATION "${KDE_INSTALL_LOGGINGCATEGORIESDIR}"
+)
+
+
+
 # Install the executable
 install(TARGETS wineyards DESTINATION bin)
 
@@ -82,3 +118,4 @@ install(FILES wineyards.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applic
 install(FILES src/wineyardsui.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/wineyards)
 install(FILES wineyardssettings.kcfg DESTINATION ${KCFG_INSTALL_DIR})
 install(FILES wineyards.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
+install(TARGETS kio_wineyards  DESTINATION /opt/kf5/plugins/kf${QT_MAJOR_VERSION}/kio )

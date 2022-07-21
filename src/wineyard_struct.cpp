@@ -9,6 +9,9 @@
 #include <QJsonArray>
 #include <QJsonObject>
 #include <INIReader.h>
+#include <KNotification>
+#include <KLocalizedString>
+#include <qprocess.h>
 
 void WineYard::setupYard()
 {
@@ -321,6 +324,110 @@ void WineYard::setIntegerScaling(bool intScaled)
 {
     integerScaling = intScaled;
 }
+
+
+void WineYard::run(const WineYardRunnerParams& params, bool useKonsole)
+{
+    QProcess* proc = new QProcess();
+    QStringList args;
+   
+    if(useKonsole){
+        args << "-e";
+        args  << QStringLiteral("wine").append(" start /unix ").append(params.program);
+        proc->startDetached("konsole", args);
+    } else {
+         args << "start";
+        args << "/unix" << params.program;
+        proc->startDetached("wine", args);
+         KNotification* note = KNotification::event("programStarted",i18n("Wine Program Started"), i18n("A Wine program (") + params.program + i18n(") has started"),QStringLiteral("wine"),params.widget,KNotification::CloseOnTimeout,"wineyards");
+        note->sendEvent();
+    }
+   
+}
+
+void WineYard::terminateProgram(const QString& programName,  QWidget* widget)
+{
+        getProcesses();
+        qDebug() << m_Processes.length();
+        QUrl url("file:///" + programName);
+        QString finalUrl((url.isValid()) ? url.fileName() : programName);
+        for (auto& procWine: m_Processes){
+            if (procWine.processName == finalUrl){
+                {
+                    QProcess* dbgProc = new QProcess();
+                    QStringList args;
+                    QStringList cmd;
+                    cmd  << QStringLiteral("attach 0x").append(procWine.pid) << "kill" << "quit" ;
+                    for (auto cmdlet : cmd){
+                        qDebug() << cmdlet;
+                        args << QStringLiteral("--command") << cmdlet;
+                        dbgProc->start("winedbg", args);
+                        dbgProc->waitForFinished();
+                        qDebug() << dbgProc->readAllStandardOutput();
+                        if(dbgProc->exitStatus() == QProcess::CrashExit){
+                            KNotification* noteFail = KNotification::event("programExitFailed",i18n("Wine Program Failed to Abort"), i18n("A Wine program (") + programName + i18n(") has failed to terminate."),QStringLiteral("wine"),widget,KNotification::CloseOnTimeout,"wineyards");
+                            noteFail->sendEvent();
+                        }
+                        args.clear();
+                    }
+                    
+                }
+                break;
+            }
+        }
+}
+
+
+void WineYard::getProcesses()
+{
+ QString parent;
+ {
+   QString result;
+   QProcess* dbgProc = new QProcess();
+   QStringList args;
+   args << "--command" << "info proc";
+   dbgProc->start("winedbg", args);
+   dbgProc->waitForFinished();
+   result = dbgProc->readAllStandardOutput();
+   if(result.isEmpty())
+       return;
+   QStringList splitResult = result.split('\n');
+   splitResult.removeAt(0);
+   for(auto& w: splitResult){
+      
+       QString wNew = w.replace("'", " ");
+       wNew = wNew.remove(0,1);
+       if(wNew.contains(QStringLiteral("\\_"))){
+           wNew = wNew.replace(QStringLiteral("\\_"), "");
+           wNew += "child";
+       }
+        wNew = wNew.replace(QRegExp("(\\s{2,})"), " ");
+
+       {
+        QStringList newWR2 = wNew.split(" ");
+        QString w_parent;
+        QRegExp digit("\\d*");
+        if (newWR2.length() >= 3 && digit.exactMatch(newWR2[0])){
+            QString processId = newWR2[0];
+            QString threads = newWR2[1];
+            QString processName = newWR2[2];
+            if (newWR2.length() == 3){
+                parent = processId;
+            } else {
+                w_parent = parent;
+            }
+            WineYardProcess procStub;
+            procStub.pid = processId;
+            procStub.processName = processName;
+            procStub.parent = w_parent;
+            procStub.threads = threads;
+            m_Processes.append(procStub);
+        }
+      }
+   }
+ }
+}
+
 
 
 

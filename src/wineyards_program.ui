@@ -26,12 +26,18 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
+   <item row="1" column="0">
     <widget class="KTitleWidget" name="programTitle">
      <property name="minimumSize">
       <size>
-       <width>800</width>
-       <height>50</height>
+       <width>830</width>
+       <height>45</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>830</width>
+       <height>45</height>
       </size>
      </property>
      <property name="font">
@@ -51,12 +57,18 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0">
+   <item row="2" column="0" alignment="Qt::AlignHCenter">
     <widget class="QWidget" name="toolbar" native="true">
      <property name="minimumSize">
       <size>
-       <width>800</width>
-       <height>50</height>
+       <width>600</width>
+       <height>45</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>600</width>
+       <height>45</height>
       </size>
      </property>
      <property name="styleSheet">
@@ -69,14 +81,14 @@
        <widget class="KLed" name="runningIndicator">
         <property name="minimumSize">
          <size>
-          <width>30</width>
-          <height>30</height>
+          <width>25</width>
+          <height>25</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>30</width>
-          <height>30</height>
+          <width>50</width>
+          <height>50</height>
          </size>
         </property>
         <property name="state">
@@ -84,16 +96,6 @@
         </property>
         <property name="shape">
          <enum>KLed::Circular</enum>
-        </property>
-        <property name="look">
-         <enum>KLed::Flat</enum>
-        </property>
-        <property name="color">
-         <color>
-          <red>94</red>
-          <green>129</green>
-          <blue>172</blue>
-         </color>
         </property>
        </widget>
       </item>
@@ -127,19 +129,6 @@
        </widget>
       </item>
       <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>100</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
        <widget class="QToolButton" name="steamBtn">
         <property name="text">
          <string>Launch with Steam</string>
@@ -152,19 +141,6 @@
          <enum>Qt::ToolButtonTextBesideIcon</enum>
         </property>
        </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
       </item>
       <item>
        <widget class="QToolButton" name="runBtn">
@@ -187,19 +163,6 @@
           <normaloff>../../../../home/tridentur</normaloff>../../../../home/tridentur</iconset>
         </property>
        </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
       </item>
       <item>
        <widget class="QToolButton" name="terminalBtn">

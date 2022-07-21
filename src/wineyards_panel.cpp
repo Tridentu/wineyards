@@ -67,7 +67,7 @@ void WineyardsPanel::addLoadedPrograms()
     auto arr = m_Yard->getLoadedPrograms();
     for (int i = 0; i < arr.size(); i++) {
         auto arrObj = arr[i];
-        WineyardsProgramEntry* entry = new WineyardsProgramEntry(this);
+        WineyardsProgramEntry* entry = new WineyardsProgramEntry(this, m_Yard);
         entry->setProgramName(arrObj.toObject().take("path").toString());
         QFile file(arrObj.toObject().take("path").toString());
         QFileInfo fileInfo(file);
@@ -133,7 +133,7 @@ void WineyardsPanel::addProgramEntry()
 {
    QString result =  m_Dialog->fileWidget()->selectedFile();
    
-   WineyardsProgramEntry* entry = new WineyardsProgramEntry(this);
+   WineyardsProgramEntry* entry = new WineyardsProgramEntry(this, m_Yard);
    entry->setProgramName(result);
    QFile file(result);
    QFileInfo fileInfo(file);

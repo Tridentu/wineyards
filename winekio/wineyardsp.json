@@ -1,0 +1,18 @@
+{
+    "KDE-KIO-Protocols": {
+        "wineyards": {
+            "Class": ":local",
+            "Icon": "wine",
+            "defaultMimetype": "application/vnd.microsoft.portable-executable",
+            "determineMimetypeFromExtension": true,
+            "input": "filesystem",
+            "output": "none",
+            "protocol": "wineyards",
+            "opening": true,
+            "listing": true,
+            "reading": true
+            
+            
+        }
+    }
+}

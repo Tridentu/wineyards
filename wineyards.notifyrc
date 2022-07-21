@@ -32,3 +32,24 @@ Name=New Desktop Entry Created
 Comment=A desktop file has been created for a program.
 Action=Sound|Popup
 Urgency=Low
+
+
+[Context/runner]
+Name=Wineyards Process Runner
+Comment=Notifications spawned from running programs via Wine.
+
+[Event/programStarted]
+Name=Wine Program Started
+Comment=A Wine program has started.
+Action=Sound|Popup
+Urgency=Normal
+
+[Context/failure]
+Name=Wineyards Failures
+Comments=Urgent notifications denoting the failures of Wine or Wineyards itself.
+
+[Event/programExitFailed]
+Name=Wine Program Failed to Abort
+Comment=A Wine program has failed to terminate.
+Action=Sound|Popup
+Urgency=High

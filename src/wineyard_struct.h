@@ -10,6 +10,7 @@
 #include <qtextstream.h>
 #include <QJsonDocument>
 #include <QJsonArray>
+#include <QProcess>
 
 enum class WineyardField {
     Name,
@@ -28,6 +29,24 @@ enum class GamescopeField {
     WindowType,
     IntegerScaling
 };
+
+struct WineYardRunnerParams {
+  QString program;
+  QWidget* widget;
+  bool isInTerminal = false;  
+  QStringList args;
+  QString postLaunchScript;
+  WineYardRunnerParams() = default;
+  WineYardRunnerParams(const WineYardRunnerParams& other) = default;
+};
+
+struct WineYardProcess { 
+  QString processName;
+  QString threads;
+  QString pid;
+  QString parent;
+};
+
 
 
 class WineYard : public QObject {
@@ -73,11 +92,14 @@ public:
     void writeToConfig(QTextStream& fileStream, GamescopeField field);
     void writeGeneralHeader(QTextStream& fileStream);
     void writeGamescopeHeader(QTextStream& fileStream);
-
+public:
+    void run(const WineYardRunnerParams& params, bool useKonsole = false);
 public:
     void setupYard();
     void save(bool replaceFile = false);
     void load(const QUrl& url);
+    void getProcesses();
+    void terminateProgram(const QString& programName, QWidget* widget);
 private:
     QString name;
     QString prevName;
@@ -94,4 +116,5 @@ private:
     bool integerScaling;
     QString windowType;
     QJsonDocument programListDoc;
+    QList<WineYardProcess> m_Processes;
 };
