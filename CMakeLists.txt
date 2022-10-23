@@ -10,6 +10,7 @@ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_CURRENT_S
 
 # Find the QtWidgets library
 find_package(Qt5Core REQUIRED)
+find_package(CaravelLib REQUIRED)
 
 find_package(Qt5Widgets CONFIG REQUIRED)
 
@@ -47,6 +48,7 @@ set(wineyards_SRC
   src/wineyards_settings.cpp
   src/wineyards_gamescope.cpp
   src/wineyards_program.cpp
+  src/wineyards_package.cpp
 )
 kconfig_add_kcfg_files(wineyards_SRC GENERATE_MOC  wineyardssettings.kcfgc)
 
@@ -72,6 +74,7 @@ target_link_libraries(wineyards
     KF5::ConfigGui
     KF5::WidgetsAddons
     KF5::Notifications
+    CaravelLib
     INIReader
 )
 

@@ -8,12 +8,7 @@ DesktopEntry=wineyards.desktop
 Name=Packaging
 Comment=Used for installing and downloading Caravel Wine packages.
 
-[Event/packageDownloaded]
-Name=Wine Package Downloaded
-Comment=A Wine Package was downloaded.
-Contexts=packaging
-Action=Popup
-Urgency=Low
+
 
 [Event/packageInstalled]
 Name=Wine Package Installed
@@ -22,6 +17,20 @@ Contexts=packaging
 Action=Sound|Popup
 Urgency=Normal
 
+[Event/packageIsInstalled]
+Name=Wine Package Already Installed
+Comment=A Wine Package was already installed.
+Contexts=packaging
+Action=Sound|Popup
+Urgency=Normal
+
+
+[Event/packageInstallFailed]
+Name=Wine Package Install Failed
+Comment=A Wine Package failed to installed.
+Contexts=packaging
+Action=Sound|Popup
+Urgency=Normal
 
 [Context/management]
 Name=WineYard Management

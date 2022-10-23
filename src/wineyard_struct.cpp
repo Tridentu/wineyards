@@ -77,6 +77,7 @@ void WineYard::save(bool replaceFile)
         writeToConfig(stream,WineyardField::Name);
         writeToConfig(stream,WineyardField::Type);
         writeToConfig(stream,WineyardField::Runner);
+        writeToConfig(stream,WineyardField::AppPath);
         writeToConfig(stream,WineyardField::Versioning);
         writeGamescopeHeader(stream);
         writeToConfig(stream,GamescopeField::FrameRate);
@@ -174,6 +175,15 @@ void WineYard::writeToConfig(QTextStream& fileStream, WineyardField field)
         case WineyardField::Versioning:
             fileStream << "versioning=" << ((useVersioning) ? "y" : "n");
             break;
+        case WineyardField::AppPath:
+            QDir wineyardDir;
+            QString pathStr2(QDir::homePath().append(QDir::separator()).append(".wineyards").append(QDir::separator()).toStdString().c_str());
+            wineyardDir = QDir(pathStr2);
+            wineyardDir.cd(QString::fromStdString(slugifyName()));
+            wineyardDir.cd("apps");
+            fileStream << "appPath=" << pathStr2 + QDir::separator() +  QString::fromStdString(slugifyName()) + QDir::separator() + QStringLiteral("apps");
+            break;
+      
     }
     fileStream << "\n";
 }
@@ -241,6 +251,7 @@ void WineYard::load(const QUrl& url){
         programListDoc = QJsonDocument::fromJson(stream.readAll().toLocal8Bit());
         jsonFile.close();
     }
+    setenv("CURRENT_WIY_DIR", reader.GetString("general","runner","appPath").c_str(), 1);
 }
 
 int WineYard::getGameResolutionWidth() const

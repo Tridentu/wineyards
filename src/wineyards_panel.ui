@@ -46,7 +46,7 @@
     <enum>QTabWidget::Rounded</enum>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
    <property name="usesScrollButtons">
     <bool>true</bool>
@@ -1495,7 +1495,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QListView" name="packageView"/>
+      <widget class="QListWidget" name="packageView"/>
      </item>
      <item alignment="Qt::AlignLeft">
       <widget class="QWidget" name="toolbar" native="true">

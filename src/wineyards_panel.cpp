@@ -10,6 +10,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include "wineyards_package.h"
 
 WineyardsPanel::WineyardsPanel(QWidget* parent, WineYard* yard) : QDialog(parent), m_Yard(yard), m_Ui(new Ui::WineyardPreferencesPanel)
 {
@@ -26,7 +27,24 @@ WineyardsPanel::WineyardsPanel(QWidget* parent, WineYard* yard) : QDialog(parent
     m_Dialog->setWindowTitle(QString("Choose an executable path"));
     m_Dialog->setOperationMode(KFileWidget::Opening);
     addLoadedPrograms();
+    addPackages();
 }
+
+void WineyardsPanel::addPackages()
+{
+    WineyardsPackageUI::InitDB();
+    auto packages = CaravelPM::CaravelDBContext::GetDB()->FindPackagesInCategory("wine");
+    if (!packages.empty()){
+        for (auto pack : packages) {
+            auto ui = new WineyardsPackageUI(this, pack);
+             QListWidgetItem* item = new QListWidgetItem(QString());
+            item->setSizeHint(ui->size());
+            m_Ui->packageView->addItem(item);
+            m_Ui->packageView->setItemWidget(item, ui);
+        }
+    }
+}
+
 
 void WineyardsPanel::openLO()
 {

@@ -5,6 +5,7 @@
 #include <QDialog>
 #include <QScopedPointer>
 #include <KFileCustomDialog>
+#include <caravel/CaravelDBContext.h>
 #include "wineyard_struct.h"
 
 
@@ -27,6 +28,7 @@ private:
     void addProgram();
     void addProgramEntry();
     void addLoadedPrograms();
+    void addPackages();
 private:
     WineYard* m_Yard;
     KFileCustomDialog*  m_Dialog;

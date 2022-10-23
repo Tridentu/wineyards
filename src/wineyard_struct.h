@@ -16,6 +16,7 @@ enum class WineyardField {
     Name,
     Type,
     Runner,
+    AppPath,
     Versioning
 };
 
